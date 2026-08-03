@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        function trigger() {
+            document.getElementById("hover").addEventListener("mouseover", popup);
+        }
+
+        function popup() {
+            alert("Welcome to XYZ bank !!!");
+        }
+        document.querySelector
+        function validateCoustomer() {
+            var custId = document.getElementById("custID").value;
+            var validate = custId.includes("XYZ");
+            if(validate) {
+                document.write("Customer Id is valid, you can proceed further to generate coupon");
+            } else if(validate == "") {
+                document.write("Coustomer ID can't be blank");
+            } else {
+                document.write("You are not a valid coustomer");
+            }
+        }
+
+        function generateCoupon() {
+            var custId = document.getElementById("custID").value;
+            var x = custId + "78946";
+            var validate = custId.includes("XYZ");
+            if(validate) {
+                document.write("Your coupon is:" + x);
+            } else if(validate == "") {
+                document.write("Coustomer ID can't be blank");
+            } else {
+                document.write("Invalide coustomer ID so coupon can't be generated");
+            }
+        }
+    </script>
+</head>
+<body onload="trigger()">
+    <p id="hover">Welcome Customer !!!</p>
+    <p id="demo">
+        Follow the below steps to get Diwali coupon:- <br>
+        1) Enter your coustomer ID in the textbox <br>
+        2) Click on validate coustomer button <br>
+        3) Click on Register button to hide all the above steps <br>
+    </p>
+
+    <button type="button" onclick="document.getElementById('demo').style.display = 'none'">Click here to Register</button> <br><br><br>
+
+    Enter Customer Id:
+    <input id="custID" type="text" name="customerID"> <br><br>
+
+    <button type="button" onclick="validateCoustomer()">Validate Customer</button>
+    <button type="button" onclick="generateCoupon()">Click here to generate coupon</button>
+</body>
+</html>
